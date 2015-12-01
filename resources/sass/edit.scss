@@ -1,0 +1,176 @@
+@import "../../node_modules/zhilizhili-ui/elements/popovers/sass/popovers";
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    overflow: hidden;
+    &__item--left {
+        float: left;
+    }
+    &__item--right {
+        float: right;
+    }
+}
+
+.top-bar {
+    width: 100%;
+    height: 98px;
+    padding-left: 101px;
+    padding-right: 101px;
+
+    &__item--left {
+
+    }
+    &__item--right {
+
+    }
+}
+
+
+%center-nav {
+    &:before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+@mixin set-center-nav() {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.user {
+    @extend %center-nav;
+    &__logo {
+        @include set-center-nav();
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    &__name {
+        @include set-center-nav();
+        margin-left: 20px;
+    }
+    &__action {
+        @include set-center-nav();
+        margin-left: 89px;
+    }
+}
+
+@mixin box() {
+    .box {
+        &__left {
+            float: left;
+        }
+        &__right {
+            overflow: hidden;
+        }
+    }
+}
+
+.box {
+    @include box();
+}
+
+.list {
+    display: block;
+    margin: 0;
+    padding-left: 0;
+    > li {
+        list-style: none;
+    }
+}
+
+.list-vertical {
+    @extend .list;
+    > li {
+        display: block;
+        width: 100%;
+    }
+}
+
+.center-set {
+    @extend %center-nav;
+    &__item {
+        @include set-center-nav();
+    }
+}
+
+%vertical-row {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+@mixin set-vetical-row {
+    display: table-row;
+}
+
+.editor {
+    @extend %vertical-row;
+    .editor__action {
+        @include set-vetical-row();
+    }
+    .editor__preview {
+        @include set-vetical-row();
+        height: 100%;
+    }
+    .editor__footer {
+        @include set-vetical-row();
+    }
+}
+
+.panel {
+    @extend %vertical-row;
+    .panel__head {
+        @include set-vetical-row();
+    }
+    .panel__body {
+        @include set-vetical-row();
+        height: 100%;
+    }
+}
+
+.shoppers {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    top: auto;
+}
+
+#main {
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    margin-top: 57px;
+    .menu {
+        width: 332px;
+        height: 100%;
+        background-color: #4d4d4d;
+        .messages {
+            width: 258px;
+            margin: 0 auto;
+            > li {
+                margin-top: 34px;
+            }
+        }
+    }
+    .content {
+        height: 100%;
+        background-color: #40a070;
+        position: relative;
+    }
+}
