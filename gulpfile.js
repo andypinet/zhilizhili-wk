@@ -25,7 +25,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task("uglify", function() {
-    return  gulp.src("public/uncompresed/*.js")
+    return  gulp.src("public/uncompresed/js/*.js")
         .pipe(uglify())
-        .pipe(gulp.dest("public/minified"));
+        .pipe(gulp.dest("public/minified/js"));
 });

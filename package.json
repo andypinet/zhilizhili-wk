@@ -20,5 +20,9 @@
     "gulp-param": "^0.6.4",
     "gulp-uglify": "^1.5.1",
     "require-dir": "^0.3.0"
+  },
+  "dependencies": {
+    "component-ajax": "0.0.2",
+    "redux": "^3.0.4"
   }
 }
